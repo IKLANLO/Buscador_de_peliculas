@@ -9,14 +9,14 @@
     <script src="main.js" defer></script>
   </head>
   <body>
-    <h1>Buscador de películas</h1>
-    <h2>Introduce la película a buscar</h2>
-    <form>
+    <form class="d-flex flex-column justify-content-center m-4">
       <div class="mb-3">
+        <h1>Buscador de películas</h1>
+        <h2>Introduce la película a buscar</h2>
         <input type="search" class="form-control w-50" id="movieSearchInput" />
         <button class="btn btn-primary" id="movieSearchBtn">Buscar</button>
       </div>
-      <section id="container"></section>
+      <section id="container" class="d-flex flex-wrap"></section>
     </form>
   </body>
 </html>
