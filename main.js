@@ -1,8 +1,6 @@
 const searchInput = document.querySelector('#movieSearchInput')
 const searchButton = document.querySelector('#movieSearchBtn')
 const cardsContainer = document.querySelector('#container')
-const APIKey = '1b17fa6ee6d58dcbf1646a5224f5e350'
-const APIBearer = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYjE3ZmE2ZWU2ZDU4ZGNiZjE2NDZhNTIyNGY1ZTM1MCIsInN1YiI6IjY1NDYxMjNhNDFhNTYxMzM2ZDg0MzA2MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2LBfdKl_PRAm68pC-93z-_0WqrMo3ebS2YypYtj9TKM'
 
 const requestCards = async (requests) => {
     const genres = {
@@ -11,7 +9,7 @@ const requestCards = async (requests) => {
         params: {language: 'en'},
         headers: {
             accept: 'application/json',
-            Authorization: `Bearer ${APIBearer}`
+            Authorization: `Bearer ${PrivateKeys.APIBearer}`
         }
     }
 
@@ -55,12 +53,12 @@ const searchMovie = async (e) => {
         params: {include_adult: 'false', language: 'en-US', page: '1'},
         headers: {
           accept: 'application/json',
-          Authorization: `Bearer ${APIBearer}`
+          Authorization: `Bearer ${PrivateKeys.APIBearer}`
         }
     }
 
     const search = searchInput.value
-    options.url = `https://api.themoviedb.org/3/search/movie?query=${search}&api_key=${APIKey}`
+    options.url = `https://api.themoviedb.org/3/search/movie?query=${search}&api_key=${PrivateKeys.APIKey}`
     // genres.url = ``
     
     const requestData = await axios
